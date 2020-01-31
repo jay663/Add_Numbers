@@ -11,10 +11,6 @@ namespace Add_Numbers.Controllers
     [Route("[controller]")]
     public class AddingNumbersController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<AddingNumbersController> _logger;
 
@@ -27,6 +23,12 @@ namespace Add_Numbers.Controllers
         public int Post(int number, int addend)
         {
             return number + addend;
+        }
+
+        [HttpGet]
+        public int Get()
+        {
+            return 10 + 20;
         }
     }
 }
